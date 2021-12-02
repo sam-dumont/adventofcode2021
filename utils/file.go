@@ -23,12 +23,5 @@ func ReadFile(delimiter string) []string{
 
 	fileContent := string(content)
 	slicedContent := strings.Split(fileContent, delimiter)
-	if delimiter == "\n" {
-		return slicedContent[:len(slicedContent) - 1]
-	} else {
-		lastElement := slicedContent[len(slicedContent) - 1]
-		slicedContent[len(slicedContent) - 1] = lastElement[:len(lastElement) - 1]
-
-		return slicedContent
-	}
+	return slicedContent[:len(slicedContent) - 1]
 }
